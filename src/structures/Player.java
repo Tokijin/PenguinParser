@@ -1,5 +1,7 @@
 package structures;
 
+import java.util.ArrayList;
+
 public class Player
 {
 
@@ -23,10 +25,12 @@ public class Player
 
 	private String   myName;
 	private Position naturalPosition;
+	private ArrayList<Game> gamesPlayed;
 	
 	public Player(String name, Position pos)
 	{
-		myName = name;
+		gamesPlayed     = new ArrayList<Game>();
+		myName          = name;
 		naturalPosition = pos;
 	}
 	
@@ -35,9 +39,15 @@ public class Player
 		return myName;
 	}
 	
-	public Position getPosition()
+	public Position getNaturalPosition()
 	{
 		return naturalPosition;
 	}
+	
+	public Game getGame( int gameIndex )
+	{
+		return gamesPlayed.get( gameIndex );
+	}
+	
 	
 }

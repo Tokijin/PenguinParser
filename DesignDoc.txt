@@ -1,6 +1,6 @@
 PenguinParser
 -------------
-For use in parsing basketball statistics files created from Afro Penguins gaames.
+For use in parsing basketball statistics files created from Afro Penguins games.
 
 Should take an input CSV file with a properly formatted header indicating the game
 from which the stats were collected, and each following line with the format:
@@ -19,6 +19,15 @@ game, player, season specifics to display the desired information. There should 
 another feature to also create a single game stat sheet given a CSV file. This
 will be used after each game to create the weekly recap stat sheet. 
 
-Necesssary classes:
+Necessary classes:
 Player
 Game
+
+
+Game -> Players -> Stats
+Player -> Game -> Stats
+
+Stats
+-Type
+-Amount
+-Timestamp

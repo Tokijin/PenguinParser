@@ -31,3 +31,11 @@ Stats
 -Type
 -Amount
 -Timestamp
+
+Main window:
+------------
+text field for path to CSV + button to browse for CSV file + button to add indicated CSV to current active Database
+button to pull up saved database file -> pops up window to specify location where DB file should be loaded from
+button to save current database to file -> pops up window to specify location to save DB file
+button to create single game table -> pops up window for path to CSV file for desired game
+?button to open separate dialog box that allows querying of current active DB?

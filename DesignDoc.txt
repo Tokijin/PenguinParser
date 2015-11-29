@@ -6,6 +6,8 @@ Should take an input CSV file with a properly formatted header indicating the ga
 from which the stats were collected, and each following line with the format:
 Timestamp, player name, statistic, result
 
+What is result for statistics like assists, steals, blocks, etc?
+
 The CSV will contain every statistical play of the game on a new line. By pulling
 together the player involved and the result, the program shall be able to determine
 a running tally of all stats on all players of the Afro Penguins team. The timestamps

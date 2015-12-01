@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Player
 {
 
-	public enum Position 
+	public static enum Position 
 	{
 		POINT_GUARD    ("Point guard",    "PG"),
 		SHOOTING_GUARD ("Shooting guard", "SG"),

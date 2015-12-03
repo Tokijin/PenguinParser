@@ -4,10 +4,11 @@ import java.util.Date;
 
 public class FreeThrowStat extends AbstractGameStatistic
 {
-	public FreeThrowStat( Date timestamp, boolean madeBucket )
+	public FreeThrowStat(Date timestamp, String playerName, boolean madeBucket)
 	{
-		setType( StatType.FREE_THROW );
-		setTime( timestamp );
-		setSuccess( madeBucket );
+		setPlayerName(playerName);
+		setType(StatType.FREE_THROW);
+		setTime(timestamp);
+		setSuccess(madeBucket);
 	}
 }

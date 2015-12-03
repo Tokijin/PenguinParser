@@ -28,7 +28,7 @@ public class PlayerDatabase {
 		// Check the name of each player on the team:
 		for ( Player currentPlayer : team )
 		{
-			if ( currentPlayer.getName().equals(playerName) )
+			if ( currentPlayer.getName().equalsIgnoreCase(playerName) )
 				return currentPlayer;
 		}
 		

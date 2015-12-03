@@ -2,12 +2,15 @@ package structures;
 
 import java.util.ArrayList;
 import statistics.*;
-import statistics.AbstractGameStatistic.StatType;
+
 
 public class Game {
 
 	private ArrayList<AbstractGameStatistic> gameStats;
 	
+	// We should save overall game stats here so we can save whole games
+	private float fieldGoalPercentage;
+
 	public Game()
 	{
 		gameStats = new ArrayList<AbstractGameStatistic>();

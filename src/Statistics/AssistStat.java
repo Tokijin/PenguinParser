@@ -6,18 +6,24 @@ import structures.Player;
 
 public class AssistStat extends AbstractGameStatistic
 {
-	private Player recipient;
+	private String recipientPlayerName;
 	
-	public AssistStat( Date timestamp, Player target )
+	public AssistStat(Date timestamp, String playerName, String recipientPlayerName)
 	{
-		setType( StatType.ASSIST );
-		setTime( timestamp );
-		setSuccess( true );
-		recipient = target;
+		setPlayerName(playerName);
+		setType(StatType.ASSIST);
+		setTime(timestamp);
+		setSuccess(true);
+		setReceipientPlayerName(recipientPlayerName);
 	}	
 	
-	public Player getRecipient()
+	public String getRecipientPlayerName()
 	{
-		return recipient;
+		return recipientPlayerName;
+	}
+	
+	public void setReceipientPlayerName(String recipientPlayerName)
+	{
+		this.recipientPlayerName = recipientPlayerName;
 	}
 }

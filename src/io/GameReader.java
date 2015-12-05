@@ -1,4 +1,4 @@
-package input.output;
+package io;
 
 import structures.*;
 import statistics.*;
@@ -31,7 +31,7 @@ public class GameReader
 			StatType statType = null;
 			
 			// Search for stat type with matching string
-			for ( StatType s: StatType.values())
+			for (StatType s : StatType.values())
 			{
 				if (s.getFullName().equalsIgnoreCase(statTypeString) || s.getAbbreviatedName().equalsIgnoreCase(statTypeString))
 					statType = s;
@@ -50,27 +50,23 @@ public class GameReader
 					stats.add(new FreeThrowStat(timeStamp, playerName, in.nextBoolean()));
 					break;
 				case OFFENSIVE_REBOUND:
-					
+					stats.add(new OffensiveReboundStat(timeStamp, playerName));
 					break;
 				case DEFENSIVE_REBOUND:
-					
+					stats.add(new DefensiveReboundStat(timeStamp, playerName));
 					break;
 				case ASSIST:
-					
+					stats.add(new AssistStat(timeStamp, playerName, in.next()));
 					break;
-					
 				case BLOCK:
-					
+					stats.add(new BlockStat(timeStamp, playerName));
 					break;
-					
 				case STEAL:
-					
+					stats.add(new StealStat(timeStamp, playerName));
 					break;
-					
 				case TURNOVER:
-					
+					stats.add(new TurnoverStat(timeStamp, playerName));
 					break;
-					
 				default:
 					// Throw exception
 					break;

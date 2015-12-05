@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Player
 {
-
 	public static enum Position 
 	{
 		POINT_GUARD    ("Point guard",    "PG"),
@@ -48,6 +47,4 @@ public class Player
 	{
 		return gamesPlayed.get( gameIndex );
 	}
-	
-	
 }

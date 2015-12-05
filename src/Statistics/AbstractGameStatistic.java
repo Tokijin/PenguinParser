@@ -6,47 +6,38 @@ public abstract class AbstractGameStatistic
 {
 	// Private fields
 	private boolean success;
-
+	private String playerName;
+	
 	// Package specific fields
-	protected Date timestamp;
+	protected Date timeStamp;
 	protected StatType type;
 	
-	// Stat name definitions
-	public static enum StatType
-	{ 
-		FIELD_GOAL ( "Field Goal", "FG" ),
-		THREE_PT_FIELD_GOAL ( "3-Point Field Goal", "3PT" ),
-		FREE_THROW ( "Free Throw", "FT" ),
-		OFFENSIVE_REBOUND ( "Offensive Rebound", "OREB" ),
-		DEFENSIVE_REBOUND ( "Defensive Rebound", "DREB" ),
-		ASSIST ( "Assist", "AST" ),
-		BLOCK ( "Block", "BLK" ),
-		STEAL ( "Steal", "STL" ),
-		TURNOVER ( "TURNOVER", "TO" );
-		
-		public String abbreviatedName;
-		public String fullName;
-		
-		private StatType ( String longName, String shortName )
-		{
-			fullName = longName;
-			abbreviatedName = shortName;
-		}
+	public AbstractGameStatistic()
+	{
+		this.success = false;
+		this.playerName = null;
+		this.timeStamp = null;
+		this.type = null;
 	}
-	
+
 	protected void setTime( Date newTimestamp )
 	{
-		timestamp = newTimestamp;
+		this.timeStamp = newTimestamp;
 	}
 	
 	protected void setType( StatType newType )
 	{
-		type = newType;
+		this.type = newType;
 	}
 	
 	protected void setSuccess( boolean newSuccess )
 	{
-		success = newSuccess;
+		this.success = newSuccess;
+	}
+	
+	protected void setPlayerName(String playerName)
+	{
+		this.playerName = playerName;
 	}
 	
 	public StatType getType()
@@ -56,7 +47,7 @@ public abstract class AbstractGameStatistic
 	
 	public Date getTime()
 	{
-		return timestamp;
+		return timeStamp;
 	}
 	
 	public boolean getSuccess()
@@ -64,13 +55,8 @@ public abstract class AbstractGameStatistic
 		return success;
 	}
 	
-	public String getShortName()
+	public String getPlayerName()
 	{
-		return type.abbreviatedName;
-	}
-	
-	public String getFullName()
-	{
-		return type.fullName;
+		return this.playerName;
 	}
 }

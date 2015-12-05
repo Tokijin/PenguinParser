@@ -4,10 +4,11 @@ import java.util.Date;
 
 public class BlockStat extends AbstractGameStatistic
 {
-	public BlockStat( Date timestamp )
+	public BlockStat(Date timestamp, String playerName)
 	{
-		setType( StatType.BLOCK );
-		setTime( timestamp );
-		setSuccess( true );
+		setPlayerName(playerName);
+		setType(StatType.BLOCK);
+		setTime(timestamp);
+		setSuccess(true);
 	}
 }

@@ -4,10 +4,11 @@ import java.util.Date;
 
 public class DefensiveReboundStat extends AbstractGameStatistic
 {
-	public DefensiveReboundStat( Date timestamp )
+	public DefensiveReboundStat(Date timeStamp, String playerName) 
 	{
-		setType( StatType.DEFENSIVE_REBOUND );
-		setTime( timestamp );
-		setSuccess( true );
+		setType(StatType.DEFENSIVE_REBOUND);
+		setPlayerName(playerName);
+		setTime(timeStamp);
+		setSuccess(true);
 	}
 }

@@ -1,5 +1,3 @@
-Timestamp, name, stat, result
------------------------------
 19:48, Opponent, 3PT, FALSE
 19:46, The Mime, DReb, TRUE
 19:37, Heisman, 3PT, FALSE
@@ -24,7 +22,7 @@ Timestamp, name, stat, result
 15:24, Heisman, FT, TRUE
 15:12, Heisman, FT, FALSE
 14:42, Opponent, FG, TRUE
-14:34, Grandpa, AST, TRUE, The Mime
+14:34, Grandpa, AST,The Mime
 14:34, The Mime, FG, TRUE
 14:18, Toki, FOUL, TRUE
 13:54, Opponent, FT, FALSE
@@ -45,7 +43,7 @@ Timestamp, name, stat, result
 11:30, Heisman, 3PT, FALSE
 11:14, Opponent, FG, FALSE
 11:13, Mamba, DReb, TRUE
-//10:52 - Old Faithful, King Kang in; Toki, Grandpa out
+//10:52 - Old Faithful, King Kang in; Toki, Grandpa out,
 10:47, Old Faithful, TO, TRUE
 10:38, Opponent, FG, FALSE
 10:36, Mamba, DReb, TRUE
@@ -60,13 +58,13 @@ Timestamp, name, stat, result
 8:25, Opponent, 3PT, FALSE
 7:45, Heisman, FT, FALSE
 7:30, Heisman, FT, TRUE
-//7:38 - Toki in; The Mime out
+//7:38 - Toki in; The Mime out,,,
 7:14, Toki, STL, TRUE
 7:08, Heisman, TO, TRUE
-//6:55 - Grandpa in; Heisman out
+//6:55 - Grandpa in; Heisman out,,,
 6:39, Opponent, FG, FALSE
 6:33, Opponent, FG, TRUE
-6:22, Grandpa, AST, TRUE, Toki
+6:22, Grandpa, AST,Toki
 6:21, Toki, 3PT, TRUE
 6:08, Opponent, FG, FALSE
 5:44, Opponent, FG, TRUE
@@ -74,7 +72,7 @@ Timestamp, name, stat, result
 5:15, Opponent, FG, TRUE
 5:15, Grandpa, FOUL, TRUE
 4:54, Opponent, FT, TRUE
-//4:50 - The Mime in; Mamba out
+//4:50 - The Mime in; Mamba out,,,
 4:33, Toki, FG, FALSE
 4:28, The Mime, STL, TRUE
 4:21, King Kang, FG, FALSE
@@ -90,9 +88,9 @@ Timestamp, name, stat, result
 1:22, Opponent, FG, TRUE
 1:15, King Kang, FG, FALSE
 1:08, Toki, BLK, TRUE
-//0:58 - Heisman in; King Kang out
+//0:58 - Heisman in; King Kang out,,,
 0:32, Opponent, 3PT, FALSE
 0:31, Toki, DReb, TRUE
 0:01, Heisman, FT, FALSE
 0:00, Heisman, FT, TRUE
-HALFTIME
+HALFTIME,,,

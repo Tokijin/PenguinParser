@@ -1,9 +1,14 @@
 package structures;
 
+import statistics.*;
 import java.util.ArrayList;
 
 public class Player
 {
+	private String myName;
+	private Position naturalPosition;
+	private ArrayList<PlayerSeasonStats> seasonsStats;
+	
 	public static enum Position 
 	{
 		POINT_GUARD    ("Point guard",    "PG"),
@@ -21,15 +26,11 @@ public class Player
 			this.shortName = abrev;
 		}
 	}
-
-	private String   myName;
-	private Position naturalPosition;
-	private ArrayList<Game> gamesPlayed;
 	
 	public Player(String name, Position pos)
 	{
-		gamesPlayed     = new ArrayList<Game>();
-		myName          = name;
+		seasonsStats = new ArrayList<PlayerSeasonStats>();
+		myName = name;
 		naturalPosition = pos;
 	}
 	
@@ -43,8 +44,94 @@ public class Player
 		return naturalPosition;
 	}
 	
-	public Game getGame( int gameIndex )
+	public void addPlayerGameStatsToPlayerSeasonStats(Game game, String seasonName)
 	{
-		return gamesPlayed.get( gameIndex );
+		PlayerGameStats newGameStats = new PlayerGameStats(game.getGameName());
+		
+		for (AbstractGameStatistic a : game.getGamePlays())
+		{
+			if (a.getPlayerName().equalsIgnoreCase(getName()))
+			{
+				switch (a.getType())
+				{
+					case FIELD_GOAL:
+						
+						if (a.getSuccess())
+						{
+							newGameStats.recordMadeFieldGoal();
+						}
+						else
+						{
+							newGameStats.recordMissedFieldGoal();
+						}
+						
+						break;
+					case THREE_PT_FIELD_GOAL:
+
+						if (a.getSuccess())
+						{
+							newGameStats.recordMadeThreePointFieldGoal();
+						}
+						else
+						{
+							newGameStats.recordMissedThreePointFieldGoal();
+						}
+						
+						break;
+					case FREE_THROW:
+						
+						if (a.getSuccess())
+						{
+							newGameStats.recordMadeFreeThrow();
+						}
+						else
+						{
+							newGameStats.recordMissedFreeThrow();
+						}
+						
+						break;
+					case OFFENSIVE_REBOUND:
+						newGameStats.addOffensiveRebound();
+						break;
+					case DEFENSIVE_REBOUND:
+						newGameStats.addDefensiveRebound();
+						break;
+					case ASSIST:
+						newGameStats.addAssist();
+						break;
+					case BLOCK:
+						newGameStats.addBlock();
+						break;
+					case STEAL:
+						newGameStats.addSteal();
+						break;
+					case TURNOVER:
+						newGameStats.addTurnover();
+						break;
+					default:
+						// Throw exception
+						break;
+				}
+			}
+		}
+		
+		newGameStats.calculateShootingPercentages();
+		
+		boolean seasonExists = false;
+		
+		for (PlayerSeasonStats p : seasonsStats)
+		{
+			if (p.getSeasonName().equalsIgnoreCase(seasonName))
+			{
+				seasonExists = true;
+				p.addPlayerGameStats(newGameStats);
+			}
+			
+			if (!seasonExists)
+			{
+				PlayerSeasonStats newSeasonStats = new PlayerSeasonStats(seasonName, newGameStats);
+				seasonsStats.add(newSeasonStats);
+			}
+		}
 	}
 }

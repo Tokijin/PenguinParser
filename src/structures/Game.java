@@ -6,6 +6,7 @@ import statistics.*;
 public class Game 
 {
 	private ArrayList<AbstractGameStatistic> gameStats;
+	private String gameName;
 	private float fieldGoalPercentage;
 	private float freeThrowPercentage;
 	private float threePointPercentage;
@@ -179,6 +180,16 @@ public class Game
 		}
 	}
 	
+	public ArrayList<AbstractGameStatistic> getGamePlays()
+	{
+		return this.gameStats;
+	}
+	
+	public void setGameName(String gameName)
+	{
+		this.gameName = gameName;
+	}
+	
 	public float getFieldGoalPercentage()
 	{
 		return this.fieldGoalPercentage;
@@ -227,5 +238,10 @@ public class Game
 	public short getTotalTurnovers()
 	{
 		return this.totalTurnovers;
+	}
+	
+	public String getGameName()
+	{
+		return this.gameName;
 	}
 }
